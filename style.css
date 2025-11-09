@@ -1,0 +1,171 @@
+/* styles.css - Modernisasi tampilan untuk promosi.html */
+
+/* Reset kecil */
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; padding: 0; }
+
+/* Tipografi & palet */
+:root{
+  --bg: #f5e6d3;
+  --brand: #ff6b35;
+  --brand-dark: #2c1810;
+  --muted: #5a3a2a;
+  --accent: #d4a574;
+  --card: #ffffff;
+  --success: #4CAF50;
+}
+
+body{
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--brand-dark);
+  line-height: 1.45;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom: 40px;
+}
+
+/* Tame the old <font> tag */
+font {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* Global container for center alignment */
+.center-wrap {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+}
+
+/* Header */
+table[bgcolor="#d4a574"] {
+  background: linear-gradient(90deg, rgba(212,165,116,1) 0%, rgba(212,165,116,0.92) 100%);
+  box-shadow: 0 6px 18px rgba(44,24,16,0.08);
+  border-radius: 0 0 12px 12px;
+}
+table[bgcolor="#d4a574"] td { padding: 18px 24px; }
+table[bgcolor="#d4a574"] a { color: var(--brand-dark); text-decoration: none; font-weight:600; margin-left:12px; }
+table[bgcolor="#d4a574"] a:hover { text-decoration: underline; }
+
+/* Hero */
+a[name="beranda"] ~ center table[width="80%"] td {
+  padding: 48px 20px;
+}
+a[name="beranda"] ~ center font[size="7"] {
+  display: block;
+  font-size: clamp(28px, 4.2vw, 44px);
+  letter-spacing: -0.02em;
+}
+a[name="beranda"] ~ center font[size="4"] { font-size: 18px; color: var(--muted); }
+
+/* Card inside hero */
+a[name="beranda"] ~ center table[bgcolor="white"] {
+  width: 60%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44,24,16,0.06);
+  border: 1px solid rgba(44,24,16,0.03);
+}
+
+/* Buttons (target cells that use bgcolor #ff6b35 or white buttons inside hero) */
+td[bgcolor="#ff6b35"], td[bgcolor="#ff6b35"] a, table[bgcolor="#ff6b35"] td {
+  background: var(--brand);
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px 22px;
+  display: inline-block;
+  box-shadow: 0 6px 18px rgba(255,107,53,0.18);
+  transition: transform .12s ease, box-shadow .12s ease;
+  cursor: pointer;
+}
+td[bgcolor="#ff6b35"]:hover, td[bgcolor="#ff6b35"] a:hover, table[bgcolor="#ff6b35"] td:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255,107,53,0.18);
+}
+td[bgcolor="white"] > a > font[color="#ff6b35"] { color: var(--brand); font-weight:700; }
+
+/* Feature boxes */
+table[width="90%"] td[bgcolor="#fff5eb"] {
+  border-radius: 12px;
+  padding: 28px 16px;
+  box-shadow: 0 8px 24px rgba(44,24,16,0.04);
+  transition: transform .15s ease;
+}
+table[width="90%"] td[bgcolor="#fff5eb"]:hover { transform: translateY(-6px); }
+
+/* Menu grid — style product cells */
+table[width="90%"] td[bgcolor="white"] {
+  border-radius: 12px;
+  padding: 18px;
+  vertical-align: top;
+  box-shadow: 0 8px 26px rgba(44,24,16,0.04);
+}
+table[width="90%"] img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Price styling */
+font[color="#ff6b35"][size="5"] { font-size: 20px; font-weight:800; display:block; margin-top:8px; }
+
+/* Badges (Terlaris / Rekomendasi) */
+table[bgcolor="#ff6b35"], table[bgcolor="#4CAF50"] {
+  border-radius: 8px;
+  display: inline-table;
+  padding: 6px 10px;
+}
+table[bgcolor="#4CAF50"] { background: var(--success); }
+
+/* Payment row */
+table[bgcolor="white"] td[bgcolor="#fff5eb"] {
+  border-radius: 8px;
+  padding: 18px 28px;
+  min-width: 110px;
+  margin: 6px;
+  display: inline-table;
+}
+
+/* CTA download section */
+table[bgcolor="#ff6b35"] {
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(255,107,53,0.16);
+}
+table[bgcolor="#ff6b35"] td { text-align: center; padding: 36px 20px; }
+table[bgcolor="#ff6b35"] table[bgcolor="white"] { border-radius: 8px; padding: 10px 16px; }
+
+/* Footer */
+table[bgcolor="#2c1810"] { border-radius: 12px; color: #fff; }
+table[bgcolor="#2c1810"] hr { border: none; height: 1px; background: rgba(90,58,42,0.08); margin: 18px auto; width: 100%; }
+
+/* Make links in footer look neat */
+table[bgcolor="#2c1810"] a { color: var(--accent); text-decoration: none; }
+table[bgcolor="#2c1810"] a:hover { text-decoration: underline; }
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  table[width="90%"], table[width="80%"] { width: 96% !important; }
+  table[width="90%"] td[width="33%"] { display: block; width: 100% !important; margin-bottom: 18px; }
+  a[name="beranda"] ~ center table[bgcolor="white"] { width: 92% !important; }
+  td[bgcolor="#ff6b35"], table[bgcolor="#ff6b35"] td { display:block; width: 100%; text-align:center; }
+}
+
+/* ==== NAVBAR STICKY ==== */
+
+/* Target tabel navbar yang pakai bgcolor #d4a574 */
+table[bgcolor="#d4a574"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  border-radius: 0;
+}
+
+/* Tambahkan jarak atas ke konten utama supaya tidak tertutup navbar */
+body {
+  padding-top: 90px; /* sesuaikan tinggi navbar kamu */
+}
